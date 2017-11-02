@@ -41,7 +41,7 @@ input {
   cursor: pointer;
 }
 
-button {
+input[type="submit"] {
   display: block;
   margin: auto;
   background: orange;
