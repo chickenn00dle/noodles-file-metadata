@@ -1,7 +1,8 @@
 const express = require('express');
 const multer = require('multer');
+const storage = multer.memoryStorage();
 const upload = multer({
-  dest: 'assets/'
+  storage: storage
 })
 
 const port = process.env.PORT;
@@ -18,16 +19,16 @@ app.post('/metadata', upload.single('target'), (req, res) => {
     'Content-Type': 'application/javascript'
   });
   
-  console.log(req.files);
-  
   let json = {
-    'name': '',
-    'size': ''
+    'filename': '',
+    'size': '',
+    'encoding': ''
   };
   
   
-  // json.name = req.file.originalname;
-  // json.size = req.file.size;
+  json.filename = req.file.originalname;
+  json.size = req.file.size + ' bytes';
+  json.encoding = req.file.encoding;
   
   res.end(JSON.stringify(json, null, 3));
 });

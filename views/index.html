@@ -17,7 +17,7 @@
 
     <main>
       <p><strong>Upload a file for its metadata in JSON format:</strong></p>
-      <form action="/metadata/" method="post">
+      <form action="/metadata" method="post" enctype="multipart/form-data">
         <input type="file" name="target">
         <input type="submit" value="Submit" name="submit">
       </form>
