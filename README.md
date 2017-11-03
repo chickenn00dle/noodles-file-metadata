@@ -7,8 +7,8 @@ And the service will return the files metadata in JSON format.
 
 Example response:
 
-{
-  'filename': example.txt,
-  'size': 8961 bytes,
-  'encoding': 7bit
+{  
+  'filename': example.txt,  
+  'size': 8961 bytes,  
+  'encoding': 7bit  
 }
