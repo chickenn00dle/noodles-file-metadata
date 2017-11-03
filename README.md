@@ -6,4 +6,9 @@ https://noodles-file-metadata.glitch.me
 And the service will return the files metadata in JSON format.
 
 Example response:
-{'size': 8961}
+
+{
+  'filename': example.txt,
+  'size': 8961 bytes,
+  'encoding': 7bit
+}
