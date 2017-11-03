@@ -1,8 +1,7 @@
 const express = require('express');
 const multer = require('multer');
-const storage = multer.memoryStorage();
 const upload = multer({
-  storage: storage
+  dest: 'assets/'
 })
 
 const port = process.env.PORT;
@@ -14,7 +13,7 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 })
 
-app.post('/metadata/', upload.array([{name:'target', maxCount:1}]), (req, res) => {
+app.post('/metadata', upload.single('target'), (req, res) => {
   res.writeHead(200, {
     'Content-Type': 'application/javascript'
   });
